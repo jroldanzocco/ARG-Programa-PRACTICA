@@ -14,6 +14,6 @@ $botonInformacion.onclick = function () {
 
   saludoBienvenida.innerText = "Bienvenido, " + nombreUsuario + "!";
 };
-function combinarDatos(s1, s2, s3) {
-  return s1 + " " + s2 + ", " + s3 + " años";
+function combinarDatos(nombre, apellido, edad) {
+  return nombre + " " + apellido + ", " + edad + " años";
 }

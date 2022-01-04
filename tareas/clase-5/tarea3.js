@@ -37,10 +37,10 @@ function convertirMinutoAHora(minutos) {
   return minutos / 60;
 }
 
-function calcularTotalTiempo(nodo) {
+function calcularTotalTiempo(tiempoParcial) {
   let totalTiempo = 0;
-  for (let i = 0; i < nodo.length; i++) {
-    totalTiempo += Number(nodo[i].value);
+  for (let i = 0; i < tiempoParcial.length; i++) {
+    totalTiempo += Number(tiempoParcial[i].value);
   }
   return totalTiempo;
 }
