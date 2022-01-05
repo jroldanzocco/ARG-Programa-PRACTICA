@@ -10,8 +10,9 @@ function convertirListaEnArray(lista) {
 }
 
 let promedioArray = promediarNumerosArray(arrayGenerado);
-let $promedioLista = document.querySelector("#promedio-lista");
-$promedioLista.insertAdjacentHTML("beforeend", promedioArray);
+document
+  .querySelector("#promedio-lista")
+  .insertAdjacentHTML("beforeend", promedioArray);
 
 function promediarNumerosArray(array) {
   let suma = 0;
@@ -19,4 +20,36 @@ function promediarNumerosArray(array) {
     suma += array[i];
   }
   return suma / array.length;
+}
+
+let numeroChico = numeroMasChico(arrayGenerado);
+
+document
+  .querySelector("#numero-mas-chico")
+  .insertAdjacentHTML("beforeend", numeroChico);
+
+function numeroMasChico(array) {
+  let numeroChico = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < numeroChico) {
+      numeroChico = array[i];
+    }
+  }
+  return numeroChico;
+}
+
+let numeroGrande = numeroMasGrande(arrayGenerado);
+
+document
+  .querySelector("#numero-mas-grande")
+  .insertAdjacentHTML("beforeend", numeroGrande);
+
+function numeroMasGrande(array) {
+  let numeroGrande = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > numeroGrande) {
+      numeroGrande = array[i];
+    }
+  }
+  return numeroGrande;
 }
