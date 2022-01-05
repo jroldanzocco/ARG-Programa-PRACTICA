@@ -53,3 +53,26 @@ function numeroMasGrande(array) {
   }
   return numeroGrande;
 }
+
+document
+  .querySelector("#numero-mas-repetido")
+  .insertAdjacentHTML("beforeend", numeroMasRepetido(arrayGenerado));
+
+function numeroMasRepetido(array) {
+  let contadorRepeticiones = 1;
+  let apariciones = 0;
+  let masRepetido;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i; j < array.length; j++) {
+      if (array[i] === array[j]) {
+        apariciones++;
+      }
+      if (apariciones > contadorRepeticiones) {
+        contadorRepeticiones = apariciones;
+        masRepetido = array[i];
+      }
+    }
+    apariciones = 0;
+  }
+  return masRepetido;
+}
