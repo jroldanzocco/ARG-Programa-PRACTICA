@@ -1,6 +1,8 @@
 // Primer botón
 $botonEnviarIntegrantes = document.querySelector("#envio");
 $botonEnviarIntegrantes.onclick = function () {
+  const segundoBoton = document.createElement("button");
+  segundoBoton.textContent = "Calcular";
   const numeroDeIntegrantes = Number(
     document.querySelector("#cantidad-integrantes").value
   );
@@ -12,6 +14,13 @@ $botonEnviarIntegrantes.onclick = function () {
   }
 
   document.querySelector("#envio").onclick = null;
+  //Implementacion segundo boton
+  document.querySelector("#integrantes").appendChild(segundoBoton);
+  segundoBoton.onclick = function () {
+    let arrayEdades = Number(document.querySelectorAll(".edades").value);
+    console.log(arrayEdades.length);
+    return false;
+  };
 };
 
 //Creacion de un nuevo integrante
@@ -26,6 +35,7 @@ function crearNuevoMiembro(cantidad) {
   nuevoLabel.textContent = "Ingrese la edad del familiar N°" + cantidad + ": ";
   let nuevoInput = document.createElement("input");
   nuevoInput.type = "number";
+  nuevoInput.className = "edades";
   nodoForm.appendChild(nuevoDiv);
   nuevoDiv.appendChild(nuevoLabel);
   nuevoLabel.appendChild(nuevoInput);
